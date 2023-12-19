@@ -68,7 +68,7 @@ function systemSalary(grossSalary) {
     const nhifDeductionValue = nhifDeductions(grossSalary);
     const payededuction = paye(grossRevenue);
 
-    const netSalary = grossSalary - (nhifDeductionValue + nssfdeduction + payeAddition);
+    const netSalary = grossSalary - (nhifDeductionValue + nssfdeduction + payededuction);
     return netSalary;
 }
 
