@@ -66,12 +66,12 @@ function paye(grossRevenue){
 function systemSalary(grossSalary) {
     const nssfdeduction = 0.6 * grossSalary;
     const nhifDeductionValue = nhifDeductions(grossSalary);
-    const payeAddition = paye(grossRevenue);
+    const payededuction = paye(grossRevenue);
 
     const netSalary = grossSalary - (nhifDeductionValue + nssfdeduction + payeAddition);
     return netSalary;
 }
 
 
-console.log(systemSalary(40000))
-console.log(systemSalary(45000))
+console.log(systemSalary(400000))
+console.log(systemSalary(450000))
