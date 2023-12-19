@@ -62,16 +62,16 @@ function paye(grossRevenue){
         return 0.35 * grossRevenue - 15000;
     }
 }
-//Function for calculating grossSalary
-function systemSalary(grossSalary, benefits) {
+//Function for calculating netSalary
+function systemSalary(grossSalary) {
     const nssfdeduction = 0.6 * grossSalary;
     const nhifDeductionValue = nhifDeductions(grossSalary);
     const payeAddition = paye(grossRevenue);
 
-    const netSalary = grossSalary - (nhifDeductionValue + nssfdeduction - payeAddition);
+    const netSalary = grossSalary - (nhifDeductionValue + nssfdeduction + payeAddition);
     return netSalary;
 }
 
 
-console.log(systemSalary(4000,500))
-console.log(systemSalary(4000 , 500))
+console.log(systemSalary(40000))
+console.log(systemSalary(45000))
