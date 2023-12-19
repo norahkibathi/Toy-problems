@@ -1,3 +1,4 @@
+// the funciton aims at calculating grading systems 
 function gradingSystem (grade) {
     if (grade>=79) {
         return "A";

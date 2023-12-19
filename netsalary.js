@@ -1,8 +1,11 @@
+
+// the section declares constants to be used in the code
 const grossSalary = 0
 const nhifdeduction = 0
 const PAYE= 0
 const nssf = 0
 const grossRevenue = 0
+// function enables calculation of nhif deductions based on the updated rates by the kenyan Goverment. 
 function nhifDeductions(grossSalary) {
     if (grossSalary <= 5999) {
         return 150;
@@ -41,6 +44,7 @@ function nhifDeductions(grossSalary) {
         return 1700;
     }
 }
+// function for calculating PAYE
 function paye(grossRevenue){
     if (grossRevenue <= 24000) {
         return  0.1 * grossRevenue;
@@ -58,6 +62,7 @@ function paye(grossRevenue){
         return 0.35 * grossRevenue - 15000;
     }
 }
+//Function for calculating grossSalary
 function systemSalary(grossSalary, benefits) {
     const nssfdeduction = 0.6 * grossSalary;
     const nhifDeductionValue = nhifDeductions(grossSalary);
@@ -66,6 +71,7 @@ function systemSalary(grossSalary, benefits) {
     const netSalary = grossSalary - (nhifDeductionValue + nssfdeduction - payeAddition);
     return netSalary;
 }
+
 
 console.log(systemSalary(4000,500))
 console.log(systemSalary(4000 , 500))
